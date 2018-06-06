@@ -1,49 +1,50 @@
-<p> Successfully connected to server!</p>
+<h1>Eat The Burger</h1>
+<div class="container">
+<div class="row align-center" id="burger-container">
+
+
+  <!-- Input for burgers available to eat -->
+  <div id="fresh" class="col-md-offset-1 col-md-4">
+
+    {{#each burger}}
+      {{#unless this.devoured}}
+          <div class="burger-div">
+  
+            <form class="inline-form" action="/?_method=PUT" method="POST">
+              <div class="form-group">
+                <label class="burger-label" for="burger-id">{{this.id}}. {{this.burger_name}}</label>
+                <input type="hidden" id="burger-id" name="id" value="{{this.id}}"/>
+                <button class="btn btn-success" type="submit">Devour it!</button>
+              </div>
+            </form>
+          </div>
+
+      {{/unless}}
+    {{/each}}
+  </div>
+
+
+<!-- This is where burgers that are devoured go -->
+  <div id="devoured"  class="col-md-offset-1 col-md-4">
+    {{#each burger}}
+      {{#if this.devoured}}
+  
+          <div  class="burger-div">
+            {{this.id}}. {{this.burger_name}}
+          </div>
+
+      {{/if}}
+    {{/each}}
+  </div>
+</div>
 
 <div class="row">
-  <center>
-
-<!-- Ready to eat (Left side of page) -->
-<div class="col-md-6">
-  <h4> Ready to Eat</h4>
-  <div id="eat">
-
-    <!-- Add Burgers to eat in here -->
-    {{#each burgers}}
-    {{#unless devoured}}
-    <form action = 'burger/eat{{id}}' method="POST">
-    <div class="input-group">
-      <li class="form-control">{{id}}. {{burger_name}}</li>
-      <span class="input-group-btn">
-        <button class = "btn btn-success devour-button" type="submit"> Eat the BURGER</button>
-      </span>
+  <h2>Add a Burger</h2>
+  <form class="form" method="POST" action="/">
+    <div class="form group">
+      <textarea type="text" name="burger_name" ></textarea>
     </div>
-    </form>
-
-    {{/unless}}
-    {{/each}}
-
-
-  </div>
+      <button class="btn btn-primary" type="submit">Add A Burger!</button>
+  </form>
 </div>
-
-<!-- Burgers devoured (right side of page) -->
-<div class="col-md-6">
-  <h4> Burgers that have been devoured</h4>
-  <div id='already_eaten'>
-
-    <!-- Burgers that have been devoured go here -->
-    {{#each burgers}}
-    {{#if this.devoured}}
-    <div class="input-group">
-      <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
-      <span class="input-group-btn">
-        <button class="btn btn-info eat-button" type="button">HI</button>
-      </span>
-    </div>
-  </div>
-  {{/if}}
-  {{/each}}
-</div>
-  </center>
 </div>
