@@ -4,4 +4,6 @@ USE burgers_db;
 INSERT INTO burgers (burger_name, devoured)
 VALUES ("Teriyaki Burger", FALSE),
        ("Half Pound", FALSE),
-       ("Bacon Cheeseburger", FALSE)
+       ("Bacon Cheeseburger", FALSE),
+       ("Sheep Burger", FALSE),
+       ("Black Bean Burger", FALSE)
