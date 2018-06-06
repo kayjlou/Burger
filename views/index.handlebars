@@ -1,0 +1,49 @@
+<p> Successfully connected to server!</p>
+
+<div class="row">
+  <center>
+
+<!-- Ready to eat (Left side of page) -->
+<div class="col-md-6">
+  <h4> Ready to Eat</h4>
+  <div id="eat">
+
+    <!-- Add Burgers to eat in here -->
+    {{#each burgers}}
+    {{#unless devoured}}
+    <form action = 'burger/eat{{id}}' method="POST">
+    <div class="input-group">
+      <li class="form-control">{{id}}. {{burger_name}}</li>
+      <span class="input-group-btn">
+        <button class = "btn btn-success devour-button" type="submit"> Eat the BURGER</button>
+      </span>
+    </div>
+    </form>
+
+    {{/unless}}
+    {{/each}}
+
+
+  </div>
+</div>
+
+<!-- Burgers devoured (right side of page) -->
+<div class="col-md-6">
+  <h4> Burgers that have been devoured</h4>
+  <div id='already_eaten'>
+
+    <!-- Burgers that have been devoured go here -->
+    {{#each burgers}}
+    {{#if this.devoured}}
+    <div class="input-group">
+      <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+      <span class="input-group-btn">
+        <button class="btn btn-info eat-button" type="button">HI</button>
+      </span>
+    </div>
+  </div>
+  {{/if}}
+  {{/each}}
+</div>
+  </center>
+</div>
