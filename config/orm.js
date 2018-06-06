@@ -17,7 +17,7 @@ let orm = {
   insertOne: function(burger_name, callback){
     // Query 
     let queryString = "INSERT INTO " + tableName + " (burger_name, devoured) VALUES (?,?)";
-    // Default value of false 
+    // Set default value of false 
     let burgerDevoured = false;
     
     connection.query(queryString, [burger_name, devoured], function(err, result) {

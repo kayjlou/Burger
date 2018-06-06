@@ -2,15 +2,15 @@ var orm = require('../config/orm.js');
 
 //Code that calls the orm functions using specific input for the orm
 var burger = {
-  selectAll: function(cb){
-    orm.selectAll(cb)
+  show: function(callback){
+    orm.selectAll(callback)
     
   },
-  insertOne: function(burger_name, cb){
-    orm.insertOne(burger_name, cb);
+  add: function(burger_name, callback){
+    orm.insertOne(burger_name, callback);
   },
-  updateOne: function(id, cb){
-    orm.updateOne(id, cb);
+  update: function(id, callback){
+    orm.updateOne(id, callback);
   }
 };
 
