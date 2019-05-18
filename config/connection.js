@@ -1,21 +1,19 @@
-var mysql = require('mysql')
+var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: "localhost",
   port: 3306,
-  user: 'root',
-  password: '',
-  database: 'burgers_db'
+  user: "root",
+  password: "Navigator13",
+  database: "burgers_db"
 });
 
 connection.connect(function(err) {
-  if (err){
-  console.log("error connecting:" + err.stack);
-  return;
-}
-  console.log("Connection.js connected")
+  if (err) {
+    console.log("error connecting:" + err.stack);
+    return;
+  }
+  console.log("Connection.js connected");
 });
-
-
 
 module.exports = connection;
