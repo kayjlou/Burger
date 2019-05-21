@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set("view engine", "handlebars")
 
-var routes = require('./controllers/burgers_controller.js')
+var routes = require('./controllers/index.js/index.js')
 app.use('/',routes);
 
 //Start server
