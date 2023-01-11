@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set("view engine", "handlebars")
 
-var routes = require('./controllers/index.js/index.js')
+var routes = require('./controllers')
 app.use('/',routes);
 
 //Start server

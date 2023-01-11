@@ -26,9 +26,9 @@
 
 <!-- This is where burgers that are devoured go -->
   <div id="devoured"  class="col-md-offset-1 col-md-4">
+    <h3> You've ate:</h3>
     {{#each burger}}
       {{#if this.devoured}}
-       <p> You've ate:</p>
           <div  class="burger-div">
             
             {{this.id}}. {{this.burger_name}}
